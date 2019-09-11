@@ -17,4 +17,9 @@ describe Article do
 			expect(article.subject).to eq 'Lorem Ipsum'
 		end
 	end
+	
+	describe "#last_comment" do 
+		it "return the last comment" do
+		end
+	end
 end
