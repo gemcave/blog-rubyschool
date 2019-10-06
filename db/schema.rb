@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_174834) do
+ActiveRecord::Schema.define(version: 2019_10_06_163028) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "permalink"
+    t.index ["permalink"], name: "index_articles_on_permalink"
   end
 
   create_table "comments", force: :cascade do |t|
