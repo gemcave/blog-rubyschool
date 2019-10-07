@@ -1,6 +1,6 @@
 <h1>Edit article</h1>
 
-<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+<%= form_for @article, method: :patch do |f| %>
 <p>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -9,11 +9,12 @@
   <%= f.label :text %>
   <%= f.text_area :text %>
 </p>
+	<% if f.object.persisted? %>
 		<p>
 			<%= f.check_box :regenerate_permalink %>
 			<%= f.label :regenerate_permalink %>
 		</p>
-
+	<% end %>
 <p>
   <%= f.submit %>
 </p>
