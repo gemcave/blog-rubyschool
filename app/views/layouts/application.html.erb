@@ -12,7 +12,10 @@
   <body>
 		<p class="notice"><%= notice %></p>
   	<p class="alert"><%= alert %></p>
-		<p><a href="/users/sign_in">Sign In</a> | <a href="/users/sign_out" data-method="delete">Sign Out</a></p>
+		<% if user_signed_in? %> <%= current_user.email %> | <a href="/users/sign_out" data-method="delete">Sign Out</a></p>
+		<% else %>
+			<p><a href="/users/sign_in">Sign In</a> 
+		<% end %>
     <%= yield %>
   </body>
 </html>
